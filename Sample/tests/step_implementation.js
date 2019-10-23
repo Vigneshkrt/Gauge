@@ -1,6 +1,6 @@
 /* globals gauge*/
 "use strict";
-const { openBrowser,write, closeBrowser, goto, press, text, focus, textBox, toRightOf } = require('taiko');
+const { openBrowser,write, closeBrowser, goto, press, text, focus, textBox, toRightOf, click } = require('taiko');
 const assert = require("assert");
 const headless = process.env.headless_chrome.toLowerCase() === 'true';
 
@@ -11,17 +11,16 @@ beforeSuite(async () => {
 afterSuite(async () => {
     await closeBrowser();
 });
-
+ 
 step("Goto google.com", async () => {
-    await goto('https://github.com/getgauge');
+    await goto('https://www.google.com');
 });
 
 step("Search for <query>", async (query) => {
-    await focus(textBox(toRightOf('Pricing')))
-    await write(query);
-    await press('Enter');
+    await write(query)
 });
 
-step("Page contains <content>", async (content) => {
-    assert.ok(await text(content).exists());
+step("Click on the search button", async (content) => {
+    await click("Google Search")
+    // assert.ok(await text(content).exists());
 });

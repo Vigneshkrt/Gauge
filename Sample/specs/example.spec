@@ -4,11 +4,18 @@ This is an executable specification file. This file follows markdown syntax. Eve
 To execute this specification, use
 	npm test
 
-## Search Taiko Repository
 
+ |id  | Word      |
+ |----|-----------|
+ |1   |Homebrew   |
+ |2   |oh my zsh  |
+ |3   |Xcode      |
+ |4   |VS Code    |
+ |5   |MacBook Pro|
+
+## Search on Google
 * Goto google.com
-* Search for "Taiko"
-* Page contains "getgauge/taiko"
-
+* Search for <Word>
+* Click on the search button
 
 
